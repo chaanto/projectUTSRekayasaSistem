@@ -26,12 +26,18 @@ public class ListViewSekolah extends AppCompatActivity implements ListView.OnIte
     private Button buttonAddSekolah;
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        getJSON();
+
+    };
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view_sekolah);
         listView = (ListView) findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
-        getJSON();
 
         buttonAddSekolah = (Button) findViewById(R.id.buttonAddSekolah);
 
@@ -106,7 +112,11 @@ public class ListViewSekolah extends AppCompatActivity implements ListView.OnIte
     }
 
     @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(this, ShowSekolah.class);
+        HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
+        String sekolahId = map.get(konfigurasi.TAG_ID).toString();
+        intent.putExtra(konfigurasi.SEKOLAH_ID,sekolahId);
+        startActivity(intent);
     }
 }

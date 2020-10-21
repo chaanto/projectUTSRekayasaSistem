@@ -1,5 +1,4 @@
 package com.example.schools;
-
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -18,27 +17,24 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class ShowPaket extends AppCompatActivity implements View.OnClickListener{
-    private EditText editTextId;
-    private EditText editTextPaket;
+public class ShowSekolah extends AppCompatActivity implements View.OnClickListener{
+    private EditText editTextSekolah;
 
     private Button buttonUpdate;
     private Button buttonDelete;
 
     private String id;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_paket);
+        setContentView(R.layout.activity_show_sekolah);
 
         Intent intent = getIntent();
 
-        id = intent.getStringExtra(konfigurasi.PAKET_ID);
+        id = intent.getStringExtra(konfigurasi.SEKOLAH_ID);
 
-        editTextId = (EditText) findViewById(R.id.editTextId);
-        editTextPaket = (EditText) findViewById(R.id.editTextPaket);
+        editTextSekolah = (EditText) findViewById(R.id.editTextSekolah);
 
         buttonUpdate = (Button) findViewById(R.id.buttonUpdate);
         buttonDelete = (Button) findViewById(R.id.buttonDelete);
@@ -46,46 +42,44 @@ public class ShowPaket extends AppCompatActivity implements View.OnClickListener
         buttonUpdate.setOnClickListener(this);
         buttonDelete.setOnClickListener(this);
 
-        editTextId.setText(id);
-
-        getPaket();
+        getSekolah();
     }
 
-    private void getPaket(){
-        class GetPaket extends AsyncTask<Void,Void,String>{
+    private void getSekolah(){
+        class GetSekolah extends AsyncTask<Void,Void,String>{
             ProgressDialog loading;
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(ShowPaket.this,"Fetching...","Wait...",false,false);
+                loading = ProgressDialog.show(ShowSekolah.this,"Fetching...","Wait...",false,false);
             }
 
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                showPaket(s);
+                showSekolah(s);
             }
 
             @Override
             protected String doInBackground(Void... params) {
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequestParam(konfigurasi.URL_GET_PAKET,id);
+                String s = rh.sendGetRequestParam(konfigurasi.URL_GET_SEKOLAH,id);
                 return s;
             }
         }
-        GetPaket ge = new GetPaket();
+        GetSekolah ge = new GetSekolah();
         ge.execute();
     }
 
-    private void showPaket(String json){
+    private void showSekolah(String json){
         try {
             JSONObject jsonObject = new JSONObject(json);
             JSONArray result = jsonObject.getJSONArray(konfigurasi.TAG_JSON_ARRAY);
             JSONObject c = result.getJSONObject(0);
-            String nama_paket = c.getString(konfigurasi.TAG_NAMA_PAKET);
+            String nama_sekolah = c.getString(konfigurasi.TAG_NAMA_SEKOLAH);
 
-            editTextPaket.setText(nama_paket);
+            editTextSekolah.setText(nama_sekolah);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -93,82 +87,82 @@ public class ShowPaket extends AppCompatActivity implements View.OnClickListener
     }
 
 
-    private void updatePaket(){
-        final String name = editTextPaket.getText().toString().trim();
+    private void updateSekolah(){
+        final String name = editTextSekolah.getText().toString().trim();
 
-        class UpdatePaket extends AsyncTask<Void,Void,String>{
+        class UpdateSekolah extends AsyncTask<Void,Void,String>{
             ProgressDialog loading;
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(ShowPaket.this,"Updating...","Wait...",false,false);
+                loading = ProgressDialog.show(ShowSekolah.this,"Updating...","Wait...",false,false);
             }
 
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                Toast.makeText(ShowPaket.this,s,Toast.LENGTH_LONG).show();
+                Toast.makeText(ShowSekolah.this,s,Toast.LENGTH_LONG).show();
             }
 
             @Override
             protected String doInBackground(Void... params) {
                 HashMap<String,String> hashMap = new HashMap<>();
                 hashMap.put(konfigurasi.KEY_ID,id);
-                hashMap.put(konfigurasi.KEY_NAMA_PAKET,name);
+                hashMap.put(konfigurasi.KEY_NAMA_SEKOLAH,name);
 
                 RequestHandler rh = new RequestHandler();
 
-                String s = rh.sendPostRequest(konfigurasi.URL_UPDATE_PAKET,hashMap);
+                String s = rh.sendPostRequest(konfigurasi.URL_UPDATE_SEKOLAH,hashMap);
 
                 return s;
             }
         }
 
-        UpdatePaket ue = new UpdatePaket();
+        UpdateSekolah ue = new UpdateSekolah();
         ue.execute();
-        startActivity(new Intent(ShowPaket.this,ListViewPaket.class));
+        startActivity(new Intent(ShowSekolah.this,ListViewSekolah.class));
     }
 
-    private void deletePaket(){
-        class DeletePaket extends AsyncTask<Void,Void,String> {
+    private void deleteSekolah(){
+        class DeleteSekolah extends AsyncTask<Void,Void,String> {
             ProgressDialog loading;
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(ShowPaket.this, "Updating...", "Tunggu...", false, false);
+                loading = ProgressDialog.show(ShowSekolah.this, "Updating...", "Wait...", false, false);
             }
 
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                Toast.makeText(ShowPaket.this, s, Toast.LENGTH_LONG).show();
+                Toast.makeText(ShowSekolah.this, s, Toast.LENGTH_LONG).show();
             }
 
             @Override
             protected String doInBackground(Void... params) {
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequestParam(konfigurasi.URL_DELETE_PAKET, id);
+                String s = rh.sendGetRequestParam(konfigurasi.URL_DELETE_SEKOLAH, id);
                 return s;
             }
         }
 
-        DeletePaket de = new DeletePaket();
+        DeleteSekolah de = new DeleteSekolah();
         de.execute();
     }
 
-    private void confirmDeletePaket(){
+    private void confirmDeleteSekolah(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        alertDialogBuilder.setMessage("Apakah Kamu Yakin Ingin Menghapus Paket ini?");
+        alertDialogBuilder.setMessage("Apakah Kamu Yakin Ingin Menghapus Sekolah ini?");
 
         alertDialogBuilder.setPositiveButton("Ya",
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
-                        deletePaket();
-                        startActivity(new Intent(ShowPaket.this,ListViewPaket.class));
+                        deleteSekolah();
+                        startActivity(new Intent(ShowSekolah.this,ListViewSekolah.class));
                     }
                 });
 
@@ -187,11 +181,13 @@ public class ShowPaket extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View v) {
         if(v == buttonUpdate){
-            updatePaket();
+            updateSekolah();
         }
 
         if(v == buttonDelete){
-            confirmDeletePaket();
+            confirmDeleteSekolah();
         }
     }
+
+
 }

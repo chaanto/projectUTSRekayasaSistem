@@ -92,6 +92,7 @@ public class AddViewSekolah extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
         if(view == buttonAddRecord){
             addSekolah();
+            startActivity(new Intent(AddViewSekolah.this,ListViewSekolah.class));
         }
 
     }

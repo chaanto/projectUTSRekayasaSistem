@@ -26,12 +26,19 @@ public class ListViewPaket extends AppCompatActivity implements ListView.OnItemC
     private Button buttonAddPaket;
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        getJSON();
+
+    };
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view_paket);
         listView = (ListView) findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
-        getJSON();
+
 
         buttonAddPaket = (Button) findViewById(R.id.buttonAddPaket);
 

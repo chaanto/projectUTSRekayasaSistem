@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -21,6 +22,14 @@ public class ListViewSiswa extends AppCompatActivity implements ListView.OnItemC
     private ListView listView;
 
     private String JSON_STRING;
+    private Button buttonAddSiswa;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        getJSON();
+
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +37,18 @@ public class ListViewSiswa extends AppCompatActivity implements ListView.OnItemC
         setContentView(R.layout.activity_list_view_siswa);
         listView = (ListView) findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
-        getJSON();
+
+        buttonAddSiswa = (Button) findViewById(R.id.buttonAddSiswa);
+        buttonAddSiswa = (Button) findViewById(R.id.buttonAddSiswa);
+
+        buttonAddSiswa.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                if(view == buttonAddSiswa){
+                    startActivity(new Intent(view.getContext(),AddViewSiswa.class));
+                }
+            }
+        });
     }
 
 
@@ -92,7 +112,11 @@ public class ListViewSiswa extends AppCompatActivity implements ListView.OnItemC
     }
 
     @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(this, ShowSiswa.class);
+        HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
+        String siswaId = map.get(konfigurasi.TAG_ID).toString();
+        intent.putExtra(konfigurasi.SISWA_ID,siswaId);
+        startActivity(intent);
     }
 }

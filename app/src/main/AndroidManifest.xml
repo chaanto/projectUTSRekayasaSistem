@@ -24,6 +24,10 @@
         <activity android:name=".ListViewSiswa" />
         <activity android:name=".AddViewPaket" />
         <activity android:name=".AddViewSekolah" />
+        <activity android:name=".AddViewSiswa" />
+        <activity android:name=".ShowPaket" />
+        <activity android:name=".ShowSekolah" />
+        <activity android:name=".ShowSiswa" />
     </application>
 
 </manifest>

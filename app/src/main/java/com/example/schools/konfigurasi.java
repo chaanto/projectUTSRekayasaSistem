@@ -1,5 +1,7 @@
 package com.example.schools;
 
+import java.util.Date;
+
 public class konfigurasi {
     //paket
     public static final String URL_ADD_PAKET="http://192.168.1.4/uts_android/paket/add_paket.php";
@@ -24,18 +26,42 @@ public class konfigurasi {
     public static final String KEY_NAMA_PAKET = "nama_paket";
     public static final String KEY_NAMA_SEKOLAH = "nama_sekolah";
 
+    public static final String KEY_NAMA_SISWA = "nama_siswa";
+    public static final String KEY_NO_INDUK = "no_induk";
+    public static final String KEY_SEX = "sex";
+    public static final String KEY_DOB = "dob";
+    public static final String KEY_DOB_PLACE = "dob_place";
+    public static final String KEY_ALAMAT = "alamat";
+    public static final String KEY_WALI = "wali";
+    public static final String KEY_WALI_NO = "wali_no";
+    public static final String KEY_ID_PAKET = "id_paket";
+    public static final String KEY_ID_SEKOLAH = "id_sekolah";
+
 
     //JSON Tags
     public static final String TAG_JSON_ARRAY="result";
     public static final String TAG_ID = "id";
     public static final String TAG_NAMA_PAKET = "nama_paket";
     public static final String TAG_NAMA_SEKOLAH = "nama_sekolah";
+
     public static final String TAG_NAMA_SISWA = "nama_siswa";
+    public static final String TAG_NO_INDUK = "no_induk";
+    public static final String TAG_SEX = "sex";
+    public static final String TAG_DOB = "dob";
+    public static final String TAG_DOB_PLACE = "dob_place";
+    public static final String TAG_ALAMAT = "alamat";
+    public static final String TAG_WALI = "wali";
+    public static final String TAG_WALI_NO = "wali_no";
+    public static final String TAG_ID_PAKET = "id_paket";
+    public static final String TAG_ID_SEKOLAH = "id_sekolah";
+
 
     public static final String TAG_NAMA = "name";
 
 
 
-    public static final String PAKET_ID = "emp_id";
+    public static final String PAKET_ID = "id";
+    public static final String SEKOLAH_ID = "id";
+    public static final String SISWA_ID = "id";
 
 }
