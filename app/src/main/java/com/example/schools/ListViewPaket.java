@@ -90,7 +90,7 @@ public class ListViewPaket extends AppCompatActivity implements ListView.OnItemC
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(ListViewPaket.this,"Mengambil Data","Mohon Tunggu...",false,false);
+                loading = ProgressDialog.show(ListViewPaket.this,"Fetching...","Wait...",false,false);
             }
 
             @Override

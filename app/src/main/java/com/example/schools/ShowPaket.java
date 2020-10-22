@@ -137,7 +137,7 @@ public class ShowPaket extends AppCompatActivity implements View.OnClickListener
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(ShowPaket.this, "Updating...", "Tunggu...", false, false);
+                loading = ProgressDialog.show(ShowPaket.this, "Updating...", "Wait...", false, false);
             }
 
             @Override

@@ -89,7 +89,7 @@ public class ListViewSekolah extends AppCompatActivity implements ListView.OnIte
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(ListViewSekolah.this,"Mengambil Data","Mohon Tunggu...",false,false);
+                loading = ProgressDialog.show(ListViewSekolah.this,"Fetching...","Wait...",false,false);
             }
 
             @Override

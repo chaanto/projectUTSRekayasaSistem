@@ -63,7 +63,7 @@ public class AddViewSekolah extends AppCompatActivity implements View.OnClickLis
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(AddViewSekolah.this,"Menambahkan...","Tunggu...",false,false);
+                loading = ProgressDialog.show(AddViewSekolah.this,"Adding...","Wait...",false,false);
             }
 
             @Override

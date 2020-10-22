@@ -89,7 +89,7 @@ public class ListViewSiswa extends AppCompatActivity implements ListView.OnItemC
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(ListViewSiswa.this,"Mengambil Data","Mohon Tunggu...",false,false);
+                loading = ProgressDialog.show(ListViewSiswa.this,"Fetching...","Wait...",false,false);
             }
 
             @Override

@@ -62,7 +62,7 @@ public class AddViewPaket extends AppCompatActivity implements View.OnClickListe
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(AddViewPaket.this,"Menambahkan...","Tunggu...",false,false);
+                loading = ProgressDialog.show(AddViewPaket.this,"Adding...","Wait...",false,false);
             }
 
             @Override
