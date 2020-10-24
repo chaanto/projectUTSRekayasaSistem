@@ -136,13 +136,13 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Update Sekolah"
+                android:text="Update Siswa"
                 android:id="@+id/buttonUpdate" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hapus Sekolah"
+                android:text="Hapus Siswa"
                 android:id="@+id/buttonDelete" />
 
         </LinearLayout>

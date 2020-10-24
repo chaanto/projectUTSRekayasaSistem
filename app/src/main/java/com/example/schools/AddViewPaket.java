@@ -91,7 +91,9 @@ public class AddViewPaket extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         if(view == buttonAddRecord){
             addPaket();
-            startActivity(new Intent(AddViewPaket.this,ListViewPaket.class));
+            Intent intent = new Intent(AddViewPaket.this,ListViewPaket.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
         }
 
     }

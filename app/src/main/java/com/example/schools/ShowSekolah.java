@@ -121,7 +121,10 @@ public class ShowSekolah extends AppCompatActivity implements View.OnClickListen
 
         UpdateSekolah ue = new UpdateSekolah();
         ue.execute();
-        startActivity(new Intent(ShowSekolah.this,ListViewSekolah.class));
+//        startActivity(new Intent(ShowSekolah.this,ListViewSekolah.class));
+        Intent intent = new Intent(ShowSekolah.this,ListViewSekolah.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     private void deleteSekolah(){
@@ -162,7 +165,10 @@ public class ShowSekolah extends AppCompatActivity implements View.OnClickListen
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
                         deleteSekolah();
-                        startActivity(new Intent(ShowSekolah.this,ListViewSekolah.class));
+//                        startActivity(new Intent(ShowSekolah.this,ListViewSekolah.class));
+                        Intent intent = new Intent(ShowSekolah.this,ListViewSekolah.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
                     }
                 });
 

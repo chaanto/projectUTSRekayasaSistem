@@ -19,7 +19,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 public class ShowPaket extends AppCompatActivity implements View.OnClickListener{
-    private EditText editTextId;
+//    private EditText editTextId;
     private EditText editTextPaket;
 
     private Button buttonUpdate;
@@ -37,7 +37,7 @@ public class ShowPaket extends AppCompatActivity implements View.OnClickListener
 
         id = intent.getStringExtra(konfigurasi.PAKET_ID);
 
-        editTextId = (EditText) findViewById(R.id.editTextId);
+//        editTextId = (EditText) findViewById(R.id.editTextId);
         editTextPaket = (EditText) findViewById(R.id.editTextPaket);
 
         buttonUpdate = (Button) findViewById(R.id.buttonUpdate);
@@ -46,7 +46,7 @@ public class ShowPaket extends AppCompatActivity implements View.OnClickListener
         buttonUpdate.setOnClickListener(this);
         buttonDelete.setOnClickListener(this);
 
-        editTextId.setText(id);
+//        editTextId.setText(id);
 
         getPaket();
     }
@@ -127,7 +127,10 @@ public class ShowPaket extends AppCompatActivity implements View.OnClickListener
 
         UpdatePaket ue = new UpdatePaket();
         ue.execute();
-        startActivity(new Intent(ShowPaket.this,ListViewPaket.class));
+//        startActivity(new Intent(ShowPaket.this,ListViewPaket.class));
+        Intent intent = new Intent(ShowPaket.this,ListViewPaket.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     private void deletePaket(){
@@ -168,7 +171,10 @@ public class ShowPaket extends AppCompatActivity implements View.OnClickListener
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
                         deletePaket();
-                        startActivity(new Intent(ShowPaket.this,ListViewPaket.class));
+//                        startActivity(new Intent(ShowPaket.this,ListViewPaket.class));
+                        Intent intent = new Intent(ShowPaket.this,ListViewPaket.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
                     }
                 });
 

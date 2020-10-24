@@ -33,6 +33,13 @@ public class ListViewSekolah extends AppCompatActivity implements ListView.OnIte
     };
 
     @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(ListViewSekolah.this,MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view_sekolah);

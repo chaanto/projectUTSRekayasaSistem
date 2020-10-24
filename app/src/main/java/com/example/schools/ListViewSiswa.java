@@ -32,6 +32,13 @@ public class ListViewSiswa extends AppCompatActivity implements ListView.OnItemC
     };
 
     @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(ListViewSiswa.this,MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view_siswa);

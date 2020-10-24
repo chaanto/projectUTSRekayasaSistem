@@ -262,7 +262,10 @@ public class ShowSiswa extends AppCompatActivity implements View.OnClickListener
 
         UpdateSiswa ue = new UpdateSiswa();
         ue.execute();
-        startActivity(new Intent(ShowSiswa.this,ListViewSiswa.class));
+//        startActivity(new Intent(ShowSiswa.this,ListViewSiswa.class));
+        Intent intent = new Intent(ShowSiswa.this,ListViewSiswa.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     private void deleteSiswa(){
@@ -303,7 +306,10 @@ public class ShowSiswa extends AppCompatActivity implements View.OnClickListener
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
                         deleteSiswa();
-                        startActivity(new Intent(ShowSiswa.this,ListViewSiswa.class));
+//                        startActivity(new Intent(ShowSiswa.this,ListViewSiswa.class));
+                        Intent intent = new Intent(ShowSiswa.this,ListViewSiswa.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
                     }
                 });
 

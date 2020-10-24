@@ -182,7 +182,10 @@ public class AddViewSiswa extends AppCompatActivity implements View.OnClickListe
                 editTextNoinduk.setError("No Induk wajib di isi!");
 
             addSiswa();
-            startActivity(new Intent(AddViewSiswa.this,ListViewSiswa.class));
+//            startActivity(new Intent(AddViewSiswa.this,ListViewSiswa.class));
+            Intent intent = new Intent(AddViewSiswa.this,ListViewSiswa.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
         }
     }
 

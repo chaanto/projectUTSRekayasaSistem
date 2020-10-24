@@ -4,23 +4,23 @@ import java.util.Date;
 
 public class konfigurasi {
     //paket
-    public static final String URL_ADD_PAKET="http://192.168.1.4/uts_android/paket/add_paket.php";
-    public static final String URL_GET_ALL_PAKET = "http://192.168.1.4/uts_android/paket/show_list_paket.php";
-    public static final String URL_GET_PAKET = "http://192.168.1.4/uts_android/paket/show_paket.php?id=";
-    public static final String URL_UPDATE_PAKET = "http://192.168.1.4/uts_android/paket/update_paket.php";
-    public static final String URL_DELETE_PAKET = "http://192.168.1.4/uts_android/paket/delete_paket.php?id=";
+    public static final String URL_ADD_PAKET="https://ariqbimantoro.com/sistem/paket/add_paket.php";
+    public static final String URL_GET_ALL_PAKET = "https://ariqbimantoro.com/sistem/paket/show_list_paket.php";
+    public static final String URL_GET_PAKET = "https://ariqbimantoro.com/sistem/paket/show_paket.php?id=";
+    public static final String URL_UPDATE_PAKET = "https://ariqbimantoro.com/sistem/paket/update_paket.php";
+    public static final String URL_DELETE_PAKET = "https://ariqbimantoro.com/sistem/paket/delete_paket.php?id=";
     //sekolah
-    public static final String URL_ADD_SEKOLAH="http://192.168.1.4/uts_android/sekolah/add_sekolah.php";
-    public static final String URL_GET_ALL_SEKOLAH = "http://192.168.1.4/uts_android/sekolah/show_list_sekolah.php";
-    public static final String URL_GET_SEKOLAH = "http://192.168.1.4/uts_android/sekolah/show_sekolah.php?id=";
-    public static final String URL_UPDATE_SEKOLAH = "http://192.168.1.4/uts_android/sekolah/update_sekolah.php";
-    public static final String URL_DELETE_SEKOLAH = "http://192.168.1.4/uts_android/sekolah/delete_sekolah.php?id=";
+    public static final String URL_ADD_SEKOLAH="https://ariqbimantoro.com/sistem/sekolah/add_sekolah.php";
+    public static final String URL_GET_ALL_SEKOLAH = "https://ariqbimantoro.com/sistem/sekolah/show_list_sekolah.php";
+    public static final String URL_GET_SEKOLAH = "https://ariqbimantoro.com/sistem/sekolah/show_sekolah.php?id=";
+    public static final String URL_UPDATE_SEKOLAH = "https://ariqbimantoro.com/sistem/sekolah/update_sekolah.php";
+    public static final String URL_DELETE_SEKOLAH = "https://ariqbimantoro.com/sistem/sekolah/delete_sekolah.php?id=";
     //siswa
-    public static final String URL_ADD_SISWA="http://192.168.1.4/uts_android/siswa/add_siswa.php";
-    public static final String URL_GET_ALL_SISWA = "http://192.168.1.4/uts_android/siswa/show_list_siswa.php";
-    public static final String URL_GET_SISWA = "http://192.168.1.4/uts_android/siswa/show_siswa.php?id=";
-    public static final String URL_UPDATE_SISWA = "http://192.168.1.4/uts_android/siswa/update_siswa.php";
-    public static final String URL_DELETE_SISWA = "http://192.168.1.4/uts_android/siswa/delete_siswa.php?id=";
+    public static final String URL_ADD_SISWA="https://ariqbimantoro.com/sistem/siswa/add_siswa.php";
+    public static final String URL_GET_ALL_SISWA = "https://ariqbimantoro.com/sistem/siswa/show_list_siswa.php";
+    public static final String URL_GET_SISWA = "https://ariqbimantoro.com/sistem/siswa/show_siswa.php?id=";
+    public static final String URL_UPDATE_SISWA = "https://ariqbimantoro.com/sistem/siswa/update_siswa.php";
+    public static final String URL_DELETE_SISWA = "https://ariqbimantoro.com/sistem/siswa/delete_siswa.php?id=";
 
     public static final String KEY_ID = "id";
     public static final String KEY_NAMA_PAKET = "nama_paket";
